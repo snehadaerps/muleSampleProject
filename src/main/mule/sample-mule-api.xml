@@ -6,7 +6,7 @@
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
 	<flow name="sample-mule-apiFlow" doc:id="1ee3e646-2523-481c-a102-dc0a5526fd45" >
 		<http:listener doc:name="Listener" doc:id="5f0be6bb-d557-4b56-8f84-6869a892c0f3" path="/test" config-ref="HTTP_Listener_config"/>
-		<set-payload value="#[&quot;Successfully deployed the application through mule maven plugin to &quot; ++ Mule::p('env')]" doc:name="Set Payload" doc:id="3915897c-8cd9-469e-b048-52aa7f508fa0" />
+		<set-payload value="#[&quot;Successfully deployed the application through mule maven plugin to &quot; ++ Mule::p('env') ++ &quot; through git repo using jenkins&quot;]" doc:name="Set Payload" doc:id="3915897c-8cd9-469e-b048-52aa7f508fa0" />
 		<logger level="INFO" doc:name="Logger" doc:id="66bc17de-3039-4c3f-9888-09a979a6f688" message="#[payload]"/>
 	</flow>
 </mule>
